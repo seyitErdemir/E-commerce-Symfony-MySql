@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Ecoast</title>
+		<!--bootstrap.min.css-->
+
+		<link href="{{ asset('theme/css/bootstrap.min.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/animate.min.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/all.min.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/slicknav.min.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/slick-theme.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/slick.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/lity.min.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/fonts/flaticon.css') }}" rel="stylesheet"/>
+
+		<link rel="shortcut icon" href="{{ asset('theme/images/fav-icon.png') }}" type="image/x-icon">
+
+
+		<link href="{{ asset('theme/css/style.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/responsive.css') }}" rel="stylesheet"/>
+
+
+		<script type="text/javascript">
+			_atrk_opts = {
+atrk_acct: "3bdJv1zDGU20kU",
+domain: "weblizar.com",
+dynamic: true
+};
+(function () {
+var as = document.createElement('script');
+as.type = 'text/javascript';
+as.async = true;
+as.src = "https://certify-js.alexametrics.com/atrk.js";
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(as, s);
+})();
+		</script>
+		<noscript><img src="../../../atrk.gif?account=3bdJv1zDGU20kU" style="display:none" height="1" width="1" alt=""></noscript>
+		<!-- End Alexa Certify Javascript -->
+	</head>
+	<body>
+
+		<!-- Menu-start-area -->
+		<header>
+
+			<div class="header-fixed header-one">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-2 col-md-12 col-sm-12">
+							<div class="nav-brand">
+								<a href="/"><img src="{{ asset('theme/images/logo.png') }}" alt="" class="logo"></a>
+							</div>
+						</div>
+						<div class="col-lg-8">
+							<nav class="navbar navbar-expand-lg navbar-light">
+								<div class="collapse navbar-collapse my-lg-0" id="navbarNav">
+									<ul class="navbar-nav mr-auto text-left">
+										<li class="nav-item">
+											<a class="nav-link scroll" href="/">Home</a>
+										</li>
+
+										<li class="nav-item">
+											<a class="nav-link scroll" href="about-us.html">About Us</a>
+										</li>
+
+										<li class="nav-item">
+											<a class="nav-link scroll" href="contact-us.html">Contact Us</a>
+										</li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+						<div class="col-lg-2">
+							<div class="login-cart">
+								<a class="nav-user" href="/logout">
+									<i class="far fa-user"></i>
+								</a>
+								<div class="cart-popup">
+									<a href="/basket" class="cart">
+										<i class="fab fa-opencart"></i>
+										<span></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="mobile-menu" data-logo="{{ asset('theme/images/logo.png') }}"></div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!---Start-main-section-->
+		<section class="page-slider">
+			<div class="hero-banner-content">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<h2 class="banner-title">Shop With Sidebar</h2>
+							<nav aria-label="breadcrumb">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item">
+										<a href="index.html">Home</a>
+									</li>
+									<li class="breadcrumb-item active" aria-current="page">Shop With Sidebar</li>
+								</ol>
+							</nav>
+						</div>
+						<div class="col-lg-6">
+							<div class="about-slider-img">
+								<img src="{{ asset('theme/images/about-slider-img.png') }}" class="wow fadeInRight" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!---End-Main-section-->
+		<!---Start-Shop-section-->
+		<section class="ws-section-spacing">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-9 order-lg-last order-md-first">
+						<div class="shop-filter">
+							<ul class="nav nav-tabs title-bottom-spacing">
+								<a href="">Short By :</a>
+								<select>
+									<option value="English">All</option>
+									<option value="Hindi">Low To High</option>
+									<option value="French">High To Low</option>
+								</select>
+								<li>
+									<a data-toggle="tab" href="#grid" class="active">
+										<i class="flaticon-grid"></i>
+									</a>
+								</li>
+								<li>
+									<a data-toggle="tab" href="#list">
+										<i class="flaticon-list-1"></i>
+									</a>
+								</li>
+							</ul>
+							<div
+								class="tab-content">
+								<!--Grid-->
+								<div id="grid" class="tab-pane fade in active">
+									<div class="row justify-content-sm-center">
+
+
+										{% for key, product in products %}
+											<!--item-->
+											<div class="col-lg-4 col-md-6 col-sm-6 col-xs-10">
+												<div class="new-collection-item">
+													<div class="new-collection-item-img">
+														<button class="wishlist noselect">
+															<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="-1 -1 26 26">
+																<path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"></path>
+															</svg>
+														</button>
+														<img src="{{ asset('upload/images/products/')}}{% if product.image %}{{product.image}}{% else %}default.png{% endif %}" class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="{{key}}" alt="">
+														<form action="/addsession" method="POST">
+															<input type="hidden" name="productId" value="{{ product.id}}">
+
+															<button type="submit" class="add-to-cart">
+																<i class="fas fa-cart-plus">Add To Card</i>
+															</button>
+
+														</form>
+
+													</div>
+													<div class="new-collection-item-content">
+														<ul class="item-rating">
+															<li>
+																<i class="far fa-star"></i>
+															</li>
+															<li>
+																<i class="far fa-star"></i>
+															</li>
+															<li>
+																<i class="far fa-star"></i>
+															</li>
+															<li>
+																<i class="far fa-star"></i>
+															</li>
+															<li>
+																<i class="far fa-star"></i>
+															</li>
+														</ul>
+														<h5>{{ product.name }}</h5>
+														<input type="hidden" name="productId" value="{{ product.id}}">
+														<span>{{ product.price}}</span>
+													</div>
+												</div>
+											</div>
+										{% endfor %}
+
+									</div>
+								</div>
+								<!--list-Products-->
+								<div id="list" class="tab-pane fade">
+									<div
+										class="row">
+										<!--item-->
+										{% for key, product in products %}
+											<div class="col-lg-12">
+												<div class="list-border">
+													<div class="row">
+														<div class="col-lg-4 col-md-6 col-sm-6">
+															<div class="product-list-bg">
+																<a href="#"><img src="{{ asset('upload/images/products/')}}{% if product.image %}{{product.image}}{% else %}default.png{% endif %}" class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt=""></a>
+															</div>
+														</div>
+														<div class="col-lg-8 col-md-6 col-sm-6">
+															<div class="product-list-content">
+																<h5>
+																	<a href="#">{{product.name}}</a>
+																</h5>
+																<span>Product Type Discription</span>
+																<h4 class="price-text">{{product.price}}</h4>
+																<p class="list-content">Lorem ipsum dolor sit amet, consectetuer adipiscing
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																							                                             elit. Aenean commodo ligula eget dolor Aenean massa.</p>
+																<a href="#" class="add-cart">
+																	<i class="fas fa-cart-plus"></i>
+																	Add To Cart</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										{% endfor %}
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<!---pagination-->
+						<nav aria-label="Page navigation example" class="navigation-btn">
+							<ul class="pagination justify-content-center">
+								<li class="page-item">
+									<a class="page-link" href="#" aria-label="Previous">
+										<span aria-hidden="true">
+											<i class="fas fa-angle-double-left"></i>
+										</span>
+									</a>
+								</li>
+								<li class="page-item">
+									<a class="page-link" href="#">1</a>
+								</li>
+								<li class="page-item active">
+									<a class="page-link" href="#">2</a>
+								</li>
+								<li class="page-item">
+									<a class="page-link" href="#">3</a>
+								</li>
+								<li class="page-item">
+									<a class="page-link" href="#">....</a>
+								</li>
+
+								<li class="page-item">
+									<a class="page-link" href="#" aria-label="Next">
+										<span aria-hidden="true">
+											<i class="fas fa-angle-double-right"></i>
+										</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<!--side-bar-->
+					<div class="col-lg-3 order-lg-first order-md-last">
+						<div class="sidebar-Categories">
+							<h5>Categories</h5>
+							<div id="accordion">
+								{% for key,  category in categories.getParent %}
+
+									<div class="card">
+										<div class="card-header" id="headingOne">
+											<p class="mb-0">
+												<a href="/category/{{category.name}}" class="btn btn-link">
+													{{category.name}}
+												</a>
+											</p>
+										</div>
+									</div>
+
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html></section><!-- JavaScript --><script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></sc><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- CSS --><linkrel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/><!-- Default theme --><linkrel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/><!-- Semantic UI theme --><linkrel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/><!-- Bootstrap theme --><linkrel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/><!---End-Shop-section-->{% if  addProductStatus  is defined   %}
+<script>
+	alertify.success("Ürün sepete eklendi");
+</script>{% endif %}<!-- Jquery.min.js--><script src="  {{ asset('theme/js/jquery-3.3.1.slim.min.js') }}"></script><script src="  {{ asset('theme/js/jquery.1.12.4.js') }}"></script><script src="  {{ asset('theme/js/bootstrap.min.js') }}"></script><script src="  {{ asset('theme/js/jquery.slicknav.min.js') }}"></script><script src="  {{ asset('theme/js/slick.min.js') }}"></script><script src="  {{ asset('theme/js/lity.min.js') }}"></script><script src="  {{ asset('theme/js/imagesloaded.js') }}"></script><script src="  {{ asset('theme/js/wow.min.js') }}"></script><script src="  {{ asset('theme/js/main.js') }}"></script></body></html></body></html></body></html>

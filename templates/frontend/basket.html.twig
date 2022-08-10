@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Ecoast</title>
+		<!--bootstrap.min.css-->
+
+		<link href="{{ asset('theme/css/bootstrap.min.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/animate.min.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/all.min.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/slicknav.min.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/slick-theme.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/slick.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/lity.min.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/fonts/flaticon.css') }}" rel="stylesheet"/>
+
+		<link rel="shortcut icon" href="{{ asset('theme/images/fav-icon.png') }}" type="image/x-icon">
+
+		<link href="{{ asset('theme/css/style.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/responsive.css') }}" rel="stylesheet"/>
+
+
+		<script type="text/javascript">
+			_atrk_opts = {
+atrk_acct: "3bdJv1zDGU20kU",
+domain: "weblizar.com",
+dynamic: true
+};
+(function () {
+var as = document.createElement('script');
+as.type = 'text/javascript';
+as.async = true;
+as.src = "https://certify-js.alexametrics.com/atrk.js";
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(as, s);
+})();
+		</script>
+		<noscript><img src="../../../atrk.gif?account=3bdJv1zDGU20kU" style="display:none" height="1" width="1" alt=""></noscript>
+		<!-- End Alexa Certify Javascript -->
+	</head>
+	<body>
+		<!-- Menu-start-area -->
+		<header>
+
+			<div class="header-fixed header-one">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-2 col-md-12 col-sm-12">
+							<div class="nav-brand">
+								<a href="/"><img src="{{ asset('theme/images/logo.png') }}" alt="" class="logo"></a>
+							</div>
+						</div>
+						<div class="col-lg-8">
+							<nav class="navbar navbar-expand-lg navbar-light">
+								<div class="collapse navbar-collapse my-lg-0" id="navbarNav">
+									<ul class="navbar-nav mr-auto text-left">
+										<li class="nav-item">
+											<a class="nav-link scroll" href="/">Home</a>
+										</li>
+
+										<li class="nav-item">
+											<a class="nav-link scroll" href="about-us.html">About Us</a>
+										</li>
+
+										<li class="nav-item">
+											<a class="nav-link scroll" href="contact-us.html">Contact Us</a>
+										</li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+						<div class="col-lg-2">
+							<div class="login-cart">
+								<a class="nav-user" href="/logout">
+									<i class="far fa-user"></i>
+								</a>
+								<div class="cart-popup">
+									<a href="/basket" class="cart">
+										<i class="fab fa-opencart"></i>
+										<span></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="mobile-menu" data-logo="{{ asset('theme/images/logo.png') }}"></div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!---Start-main-section-->
+		<section class="page-slider">
+			<div class="hero-banner-content">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<h2 class="banner-title">My Cart</h2>
+							<nav aria-label="breadcrumb">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item">
+										<a href="index.html">Home</a>
+									</li>
+									<li class="breadcrumb-item active" aria-current="page">My Cart</li>
+								</ol>
+							</nav>
+						</div>
+						<div class="col-lg-6">
+							<div class="about-slider-img">
+								<img src="{{ asset('theme/images/about-slider-img.png') }}" class="wow fadeInRight" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!---End-Main-section-->
+
+
+		{% if  baskets  is empty   %}
+
+
+			<!---Start-main-section-->
+			<section class="page-slider">
+				<div class="hero-banner-content">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6">
+								<h1 class="banner-title">Sepetiniz Boş</h1>
+
+							</div>
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="checkout-card">
+									<a href="/tracking" class="btn-submit ms-5">
+										<h4 class="chechout-title">Önceki Sipariş Detaylarım
+											<span class="chechout-span">>>></span>
+										</h4>
+									</a>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<!---End-Main-section-->
+
+
+		{% else %}
+
+			<!---Start-Product-Detail-->
+			<section class="ws-section-spacing">
+				<div class="container">
+					<div class="row">
+						<div class="my-cart">
+							<h2>Shopping Cart</h2>
+							<table class="table-responsive">
+								<thead>
+									<tr>
+										<th class="cart-product">Product</th>
+										<th class="cart-name">Name</th>
+										<th class="cart-price">Price</th>
+										<th class="cart-quantity">Quantity</th>
+										<th class="cart-Total">Total</th>
+										<th class="cart-action">Action</th>
+									</tr>
+								</thead>
+								<tbody>
+
+									{% for key, basket in baskets %}
+										<tr>
+											<td class="cart-img">
+												<div class="cart-img-bg"><img src="{{ asset('upload/images/products/')}}{% if basket.image %}{{basket.image}}{% else %}default.png{% endif %}" class="wow zoomIn" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt=""></div>
+											</td>
+											<td class="cart-name-product">
+												<a href="#">{{ basket.name}}</a>
+											</td>
+											<td class="cart-product-price">
+												<a href="#">{{basket.price}}</a>
+											</td>
+											<td class="cart-quantity">
+												<div class="product_quantity">
+													<div class="quanty_form">
+														<div class="product-quantity d-flex">
+															<a href="/basket/minus?productId={{basket.id}}" type="button" class="sub">-</a>
+															<input type="text" value="{{basket.quantity}}">
+															<a href="/basket/plus?productId={{basket.id}}" type="button" class="add">+</a>
+														</div>
+													</div>
+												</div>
+											</td>
+											<td class="cart-total-price">
+												<a href="#">{{basket.totalPrice}}
+													€</a>
+											</td>
+											<td class="cart-action">
+												<a href="/basket/deleteProduct?productId={{basket.id}}">
+													<i class="flaticon-delete"></i>
+												</a>
+											</td>
+										</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+							<div class="total-price justify-content-between">
+								<a href="/" class="add-cart active">Continue Shopping</a>
+								<p class="grand-total">Grand Total :
+									{{baskets[0]['basketTotalPrice']}}
+									€</p>
+								<a href="/check-out" class="add-cart">Proceed To Checkout</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!---End-Product-Detail-->
+
+		{% endif %}
+
+
+		<!-- Jquery.min.js-->
+		<script src="  {{ asset('theme/js/jquery-3.3.1.slim.min.js') }}"></script>
+		<script src="  {{ asset('theme/js/jquery.1.12.4.js') }}"></script>
+		<script src="  {{ asset('theme/js/bootstrap.min.js') }}"></script>
+		<script src="  {{ asset('theme/js/jquery.slicknav.min.js') }}"></script>
+		<script src="  {{ asset('theme/js/slick.min.js') }}"></script>
+		<script src="  {{ asset('theme/js/lity.min.js') }}"></script>
+		<script src="  {{ asset('theme/js/imagesloaded.js') }}"></script>
+		<script src="  {{ asset('theme/js/wow.min.js') }}"></script>
+		<script src="  {{ asset('theme/js/main.js') }}"></script>
+
+	</body>
+</html>

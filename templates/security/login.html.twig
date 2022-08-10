@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Ecoast</title>
+		<!--bootstrap.min.css-->
+
+		<link href="{{ asset('theme/css/bootstrap.min.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/animate.min.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/all.min.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/slicknav.min.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/slick-theme.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/slick.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/lity.min.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/fonts/flaticon.css') }}" rel="stylesheet"/>
+
+		<link rel="shortcut icon" href="{{ asset('theme/images/fav-icon.png') }}" type="image/x-icon">
+
+
+		<link href="{{ asset('theme/css/style.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('theme/css/responsive.css') }}" rel="stylesheet"/>
+
+
+		<script type="text/javascript">
+			_atrk_opts = {
+atrk_acct: "3bdJv1zDGU20kU",
+domain: "weblizar.com",
+dynamic: true
+};
+(function () {
+var as = document.createElement('script');
+as.type = 'text/javascript';
+as.async = true;
+as.src = "https://certify-js.alexametrics.com/atrk.js";
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(as, s);
+})();
+		</script>
+		<noscript><img src="../../../atrk.gif?account=3bdJv1zDGU20kU" style="display:none" height="1" width="1" alt=""></noscript>
+		<!-- End Alexa Certify Javascript -->
+	</head>
+	<body>
+
+		<!-- Start-Header-Section -->
+		<!-- Menu-start-area -->
+
+		<!---Start-main-section-->
+			<section class="page-slider"> <div class="hero-banner-content">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<h2 class="banner-title">Login</h2>
+						</div>
+						<div class="col-lg-6">
+							<div class="about-slider-img">
+								<img src="{{ asset('theme/images/about-slider-img.png') }}" class="wow fadeInRight" data-wow-delay=".25s" data-wow-duration="1s" data-wow-iteration="1" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!---End-Main-section-->
+		<!---Start-Login-->
+		<section class="ws-section-spacing">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="resigter-customer">
+							<h4 class="">REGISTERED CUSTOMERS</h4>
+							<div class="login-form">
+								<p>If you have an account, sign in with your email address.</p>
+								<form method="post">
+									{% if error %}
+										<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+									{% endif %}
+
+									{% if app.user %}
+										<div class="mb-3">
+											You are logged in as
+											{{ app.user.userIdentifier }},
+											<a href="{{ path('app_logout') }}">Logout</a>
+										</div>
+									{% endif %}
+
+									<div class="form-group">
+										<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus placeholder="Enter Your Email">
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required placeholder="Enter Your Password">
+									</div>
+
+									<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+									<button class="contact-btn forget" type="submit">
+										Sign in
+									</button>
+								</form>
+
+							</div>
+						</div>
+					</div>
+					<!--NEW-CUSTOMER-->
+					<div class="col-lg-6">
+						<div class="resigter-customer">
+							<h4 class="/register">NEW CUSTOMER</h4>
+							<div class="login-form">
+								<p>Creating an account has many benefits: check out faster, keep more than one address, track orders and more.</p>
+								<a href="/register" class="add-cart">CREATE AN ACCOUNT</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!---End-Login-->
+
+		<!-- Jquery.min.js-->
+		<script src="  {{ asset('theme/js/jquery-3.3.1.slim.min.js') }}"></script>
+		<script src="  {{ asset('theme/js/jquery.1.12.4.js') }}"></script>
+		<script src="  {{ asset('theme/js/bootstrap.min.js') }}"></script>
+		<script src="  {{ asset('theme/js/jquery.slicknav.min.js') }}"></script>
+		<script src="  {{ asset('theme/js/slick.min.js') }}"></script>
+		<script src="  {{ asset('theme/js/lity.min.js') }}"></script>
+		<script src="  {{ asset('theme/js/imagesloaded.js') }}"></script>
+		<script src="  {{ asset('theme/js/wow.min.js') }}"></script>
+		<script src="  {{ asset('theme/js/main.js') }}"></script>
+
+	</body>
+</html>
